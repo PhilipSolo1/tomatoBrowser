@@ -34,8 +34,8 @@ Versions are the ones I develop. If I do not have enough time to release the ver
  - PhilipSolo1
 
 ## Credits
-Created by: PhilipSolo1
-Owned by: PhilipSolo1
-Maintained by: PhilipSolo1
-GUI library by: The Qt Company
-Icons by: Yusuke Kamiyamane
+Created by: PhilipSolo1<br>
+Owned by: PhilipSolo1<br>
+Maintained by: PhilipSolo1<br>
+GUI library by: The Qt Company<br>
+Icons by: Yusuke Kamiyamane<br>
