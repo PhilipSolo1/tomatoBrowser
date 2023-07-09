@@ -18,7 +18,7 @@ Installation is simple, just go to the [realeases area](https://github.com/Phili
 Bundled releases are avaliable, but are still experimental, so they can be unstable. Download them from the ["Bundled" tag in the realeses area](https://github.com/PhilipSolo1/tomatoBrowser/releases/tag/Bundled).
 
 ### Installer
-I'm currently working on another porject a GUI-based installer in Python, which I will utilize here.
+I'm currently working on another porject a GUI-based installer in Python, which I will utilize here. Until now, releases with a installer are unavaliable due to issues with packaging.
 
 
 ## Versions/releases and how they work
