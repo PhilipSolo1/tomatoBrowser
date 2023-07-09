@@ -1,18 +1,22 @@
+print("======== tomatoBrowser Console ======== \n")
+#try:
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
-from PyQt5.QtWebEngineWidgets import *
 from PyQt5.QtPrintSupport import *
-
-import os
+from PyQt5.QtWebEngineWidgets import *
 import sys
+import json
+#except ImportError as error:
+#    print(f"Error while importing libraries. Error code: {error}")
 
 homepage = "http://pasws.net/projects/tomatobrowser/home.html"
 newtab_page = "http://google.com/"
+contributors = json.loads(open("assets/other/contributors.json", "r").read()) # don't worry, this loads a json
 
 class AboutTSDialog(QDialog):
     def __init__(self, *args, **kwargs):
-        super(AboutDialog, self).__init__(*args, **kwargs)
+        super(AboutTSDialog, self).__init__(*args, **kwargs)
 
         QBtn = QDialogButtonBox.Ok  # No cancel
         self.buttonBox = QDialogButtonBox(QBtn)
@@ -32,7 +36,7 @@ class AboutTSDialog(QDialog):
         tslogo.setPixmap(QPixmap("assets/icon/ts-icon-128.png"))
         layout.addWidget(tslogo)
 
-        layout.addWidget(QLabel("=========== tomatoSoup ==========="))
+        layout.addWidget(QLabel("================================="))
         layout.addWidget(QLabel("VERSION_0.1.1_alpha_PRIVATE_02"))
         layout.addWidget(QLabel("By: PhilipSolo1"))
         layout.addWidget(QLabel("Copyright 2023 PhilipSolo"))
@@ -67,6 +71,11 @@ class CreditsDialog(QDialog):
         layout.addWidget(QLabel("Maintained by: PhilipSolo1"))
         layout.addWidget(QLabel("GUI library by: The Qt Company"))
         layout.addWidget(QLabel("Icons by: Yusuke Kamiyamane"))
+        layout.addWidget(QLabel(""))
+        layout.addWidget(QLabel("Contributors"))
+        layout.addWidget(QLabel("======================================="))
+        for i in contributors:
+            layout.addWidget(QLabel(i))
 
         for i in range(0, layout.count()):
             layout.itemAt(i).setAlignment(Qt.AlignHCenter)
@@ -97,13 +106,11 @@ class AboutDialog(QDialog):
         logo.setPixmap(QPixmap("assets/icon/tb-icon-128.png"))
         layout.addWidget(logo)
 
-        layout.addWidget(QLabel("========= tomatoBrowser ========="))
+        layout.addWidget(QLabel("================================="))
         layout.addWidget(QLabel("VERSION_1.0.0_alpha_PUBLIC_01"))
-        layout.addWidget(QLabel("(alpha 1.0.0 build 01)"))
         layout.addWidget(QLabel("By: PhilipSolo1"))
         layout.addWidget(QLabel("Copyright 2023 PhilipSolo"))
         layout.addWidget(QLabel("Licenced under the Apache Licence"))
-        layout.addWidget(QLabel("Used under permission by owner"))
 
         for i in range(0, layout.count()):
             layout.itemAt(i).setAlignment(Qt.AlignHCenter)
@@ -201,10 +208,10 @@ class MainWindow(QMainWindow):
         about_action.triggered.connect(self.about)
         info_menu.addAction(about_action)
 
-        about_action = QAction(QIcon("assets/btn/about.png"), "About tomatoSoup //not working yet", self)
-        about_action.setStatusTip("Find out more about tomatoSoup")
-        about_action.triggered.connect(self.aboutTS)
-        info_menu.addAction(about_action)
+        about_action2 = QAction(QIcon("assets/btn/about.png"), "About tomatoSoup", self)
+        about_action2.setStatusTip("Find out more about tomatoSoup")
+        about_action2.triggered.connect(self.aboutTS)
+        info_menu.addAction(about_action2)
 
         about_action = QAction(QIcon("assets/btn/about.png"), "Credits", self)
         about_action.setStatusTip("Credits for tomatoBrowser")
@@ -219,11 +226,11 @@ class MainWindow(QMainWindow):
 
         self.add_new_tab(QUrl(homepage), "Homepage")
 
-        self.resize(QSize(500, 500))
-        self.show()
+        self.showMaximized()
 
         self.setWindowTitle("tomatoBrowser")
         self.setWindowIcon(QIcon("assets/icon/tb-icon-32.png"))
+
 
     def add_new_tab(self, qurl=None, label="Blank"):
 
@@ -350,3 +357,6 @@ app.setOrganizationDomain("pasws.net")
 window = MainWindow()
 
 app.exec_()
+
+print("============= Console End =============")
+print("        Shutting down... Bye!")
