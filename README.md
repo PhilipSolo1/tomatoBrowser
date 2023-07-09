@@ -51,6 +51,10 @@ Versions are the ones I develop. If I do not have enough time to release the ver
     - Fixed conflict with "About tomatoSoup" action and "About tomatoBrowser".
  - Created GitHub page
 
+#### VERSION_1.0.1_alpha_PUBLIC_01
+ - I forgot a lot sorry
+ - Added "Contributors" to the "Credits" section.
+
 ## FAQ
 #### Q: When will you upgrade to PyQt6? <br> A: Not soon. We will upgrade around version 2.
 #### Q: When will Settings be added? <br> A: Next version. You can read about how versions/releases up there. :point_up_2:
