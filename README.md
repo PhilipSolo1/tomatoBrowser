@@ -6,8 +6,11 @@ tomatoBrowser's official GitHub page!
 tomatoBrowser is a hobby project, so do not use it as your main browser. It is currently in its alpha developement, and right now bug fixes will come fast. If you find a bug (or crash), please report it in the issues section.
 
 
-## Instlaing
-Installation is simple, just go to the [realeases area](https://github.com/PhilipSolo1/tomatoBrowser/releases) or the [tomatoBrowser Downloads at PASWS.net](http://pasws.net/projects/tomatoBrowser/downloads/) (not yet ready) and download the latest release avaliable.
+## Running
+To run install all [requierments](#requirements) and then use the command `python browser_tabbed.py`.
+
+## Installing
+Installation is simple, just go to the [realeases area](https://github.com/PhilipSolo1/tomatoBrowser/releases) or the [tomatoBrowser downloads at PASWS.net](http://pasws.net/projects/tomatoBrowser/downloads/) (not yet ready) and download the latest release avaliable.
 
 ### Requirements
  - Python
